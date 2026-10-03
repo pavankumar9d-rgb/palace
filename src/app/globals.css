@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0A0703;
+  --color-bg-2: #120D05;
+  --color-gold-deep: #3B2B0E;
+  --color-gold: #D4AF37;
+  --color-champagne: #EFE7DA;
+  --color-ivory: #F9F8F5;
+  --font-headline: var(--font-playfair), serif;
+  --font-ui: var(--font-inter), sans-serif;
+}
+
+:root {
+  --bg: #0A0703;
+  --bg-2: #120D05;
+  --gold-deep: #3B2B0E;
+  --gold: #D4AF37;
+  --champagne: #EFE7DA;
+  --ivory: #F9F8F5;
+  
+  /* Dynamic tone injected from tone.json at 10 Hz */
+  --ui-lum: 128;
+  --ui-warm: 128;
+
+  /* Derived lighting adjustments */
+  --hairline-opacity: clamp(0.08, calc(var(--ui-lum) / 255 * 0.25), 0.25);
+  --hairline-color: rgba(249, 248, 245, var(--hairline-opacity));
+}
+
+html, body {
+  background-color: var(--bg);
+  color: var(--ivory);
+  font-family: var(--font-ui);
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Vignette overlay: seamless integration with page background */
+.vignette-overlay {
+  background: radial-gradient(
+    circle at center,
+    rgba(10, 7, 3, 0) 40%,
+    rgba(10, 7, 3, 0.35) 75%,
+    rgba(10, 7, 3, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* Edge shadows to ensure zero visible canvas boundaries */
+.edge-fade-top {
+  background: linear-gradient(to bottom, rgba(10, 7, 3, 0.8) 0%, rgba(10, 7, 3, 0) 100%);
+  pointer-events: none;
+}
+.edge-fade-bottom {
+  background: linear-gradient(to top, rgba(10, 7, 3, 0.8) 0%, rgba(10, 7, 3, 0) 100%);
+  pointer-events: none;
+}
+
+/* Chapter text typography & local progress derivation */
+.chapter-node {
+  /* --p is written by the scroll loop: 0 -> 1 */
+  /* Enter: 0 to 0.15 (0% to 15%) */
+  /* Hold: 0.15 to 0.85 */
+  /* Exit: 0.85 to 1.0 (85% to 100%) */
+  opacity: var(--chapter-opacity, 0);
+  transform: translateY(var(--chapter-y, 20px));
+  letter-spacing: var(--chapter-ls, 0.15em);
+  transition: opacity 80ms linear, transform 80ms ease-out;
+  pointer-events: none;
+}
+
+.chapter-node.is-active {
+  pointer-events: auto;
+}
+
+/* Hairline borders */
+.border-hairline {
+  border-color: rgba(249, 248, 245, 0.12);
+}
+
+.border-hairline-gold {
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+/* Glassmorphism utility classes */
+.glass-nav {
+  background: rgba(10, 7, 3, 0.7);
+  backdrop-filter: blur(var(--nav-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--nav-blur, 12px));
+  border-bottom: 1px solid rgba(249, 248, 245, 0.08);
+}
+
+.glass-card {
+  background: rgba(18, 13, 5, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Skip link accessible styling */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  z-index: 10000;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 20px;
+}

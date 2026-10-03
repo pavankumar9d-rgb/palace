@@ -1,0 +1,99 @@
+{
+  "count": 1441,
+  "pad": 4,
+  "ext": "webp",
+  "exportFps": 12,
+  "durationSec": 120.083,
+  "sets": {
+    "720": {
+      "w": 1280,
+      "h": 720,
+      "dir": "/frames/720"
+    },
+    "1080": {
+      "w": 1920,
+      "h": 1080,
+      "dir": "/frames/1080"
+    }
+  },
+  "thumbs": {
+    "w": 320,
+    "h": 180,
+    "step": 8,
+    "dir": "/frames/thumbs"
+  },
+  "clips": [
+    {
+      "id": "C01",
+      "name": "Arrival Descent Through the Mist",
+      "startIndex": 0,
+      "endIndex": 119
+    },
+    {
+      "id": "C02",
+      "name": "Forecourt and Threshold",
+      "startIndex": 120,
+      "endIndex": 239
+    },
+    {
+      "id": "C03",
+      "name": "The Grand Hall",
+      "startIndex": 240,
+      "endIndex": 359
+    },
+    {
+      "id": "C04",
+      "name": "The Ascent",
+      "startIndex": 360,
+      "endIndex": 479
+    },
+    {
+      "id": "C05",
+      "name": "The Doors Open",
+      "startIndex": 480,
+      "endIndex": 599
+    },
+    {
+      "id": "C06",
+      "name": "Onto the Terrace",
+      "startIndex": 600,
+      "endIndex": 719
+    },
+    {
+      "id": "C07",
+      "name": "Over the Rail, Across the Water",
+      "startIndex": 720,
+      "endIndex": 839
+    },
+    {
+      "id": "C08",
+      "name": "Through the Dining Pavilion",
+      "startIndex": 840,
+      "endIndex": 959
+    },
+    {
+      "id": "C09",
+      "name": "Across the Water",
+      "startIndex": 960,
+      "endIndex": 1079
+    },
+    {
+      "id": "C10",
+      "name": "Through the Spa",
+      "startIndex": 1080,
+      "endIndex": 1199
+    },
+    {
+      "id": "C11",
+      "name": "Golden Hour Orbit",
+      "startIndex": 1200,
+      "endIndex": 1319
+    },
+    {
+      "id": "C12",
+      "name": "Night Reveal",
+      "startIndex": 1320,
+      "endIndex": 1440
+    }
+  ]
+}

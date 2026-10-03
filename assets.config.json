@@ -1,0 +1,13 @@
+{
+  "assetsDir": "assests",
+  "workDir": "C:\\aurelia-work",
+  "exportFps": 12,
+  "targetWidth": 1920,
+  "targetHeight": 1080,
+  "seamDuplicateThreshold": 5,
+  "webp": {
+    "p720": { "w": 1280, "h": 720, "quality": 78 },
+    "p1080": { "w": 1920, "h": 1080, "quality": 80 },
+    "thumbs": { "w": 320, "h": 180, "quality": 60, "step": 8 }
+  }
+}
